@@ -3,7 +3,7 @@ import StatsCards from "../../components/StatsCards";
 import RecentCalls from "../../components/RecentCalls";
 import DateFilter from "../../components/DateFilter";
 import { callsData } from "../../data";
-
+import CallInterfaceCard from '../../components/CallInterfaceCard';
 const Dashboard: React.FC = () => {
   const [filteredCalls, setFilteredCalls] = useState(callsData.slice(0, 3));
 
@@ -76,6 +76,13 @@ const Dashboard: React.FC = () => {
       <div className="mt-6">
         <RecentCalls calls={filteredCalls} />
       </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+  {callsData.slice(0, 2).map((call) => (
+    <CallInterfaceCard key={call.id} call={call} />
+  ))}
+</div>
+
 
       {/* Quick Actions */}
       <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">

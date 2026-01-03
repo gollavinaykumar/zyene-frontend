@@ -1,7 +1,7 @@
 import React from "react";
 import { Call } from "../../types";
 import { Phone, CheckCircle, XCircle, Clock, MoreVertical } from "lucide-react";
-
+import CallInterfaceCard from '../CallInterfaceCard';
 interface RecentCallsProps {
   calls: Call[];
 }
@@ -67,6 +67,7 @@ const RecentCalls: React.FC<RecentCallsProps> = ({ calls }) => {
               <th className="text-left py-3 px-4 text-gray-600 font-medium">
                 Actions
               </th>
+              
             </tr>
           </thead>
           <tbody>
@@ -109,6 +110,20 @@ const RecentCalls: React.FC<RecentCallsProps> = ({ calls }) => {
                     <MoreVertical className="w-4 h-4 text-gray-500" />
                   </button>
                 </td>
+             
+
+
+<td className="py-4 px-4">
+  <button 
+    onClick={() => {
+      // You can store the selected call in state and render CallInterfaceCard
+      // Or navigate to a separate call detail page
+    }}
+    className="px-3 py-1 bg-blue-50 text-blue-600 text-sm font-medium rounded-lg hover:bg-blue-100"
+  >
+    View Chat
+  </button>
+</td>
               </tr>
             ))}
           </tbody>
